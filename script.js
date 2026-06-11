@@ -864,3 +864,15 @@ function saveGuestAndGoTravel(event) {
     window.location.href = "accommodations.html";
   }
 }
+
+const travelPageLink = document.getElementById("travelPageLink");
+
+if (travelPageLink) {
+  travelPageLink.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const currentQuery = window.location.search;
+
+    window.location.href = "accommodations.html" + currentQuery;
+  });
+}
