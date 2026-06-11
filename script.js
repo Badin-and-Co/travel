@@ -876,3 +876,17 @@ if (travelPageLink) {
     window.location.href = "accommodations.html" + currentQuery;
   });
 }
+
+window.addEventListener("load", function () {
+  if (window.location.hash === "#accommodations") {
+    envelopeScreen.classList.add("hidden");
+    invitationPage.classList.remove("hidden");
+
+    setTimeout(() => {
+      document.querySelector("#accommodations")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }, 300);
+  }
+});
