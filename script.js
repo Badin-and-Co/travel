@@ -851,3 +851,16 @@ if (registryToggle && registryContent) {
   });
 
 }
+
+function saveGuestAndGoTravel(event) {
+  event.preventDefault();
+
+  const params = new URLSearchParams(window.location.search);
+  const guest = params.get("guest");
+
+  if (guest) {
+    window.location.href = "accommodations.html?guest=" + encodeURIComponent(guest);
+  } else {
+    window.location.href = "accommodations.html";
+  }
+}
