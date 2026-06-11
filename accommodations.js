@@ -279,3 +279,27 @@ if (window.L) {
     addPointsToMap(travelMap, mapPoints);
   }
 }
+
+
+function keepGuestOnBackButtons() {
+  const params = new URLSearchParams(window.location.search);
+  const guest = params.get("guest");
+
+  if (!guest) return;
+
+  const backLinks = [
+    document.getElementById("backToInvitation"),
+    document.getElementById("bottomBackToInvitation")
+  ];
+
+  backLinks.forEach((link) => {
+    if (link) {
+      link.href =
+        "index.html?guest=" +
+        encodeURIComponent(guest) +
+        "#accommodations";
+    }
+  });
+}
+
+keepGuestOnBackButtons();
